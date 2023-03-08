@@ -94,7 +94,7 @@ jobs:
       - name: Download Sacking the OS
         uses: actions/download-artifact@v3
         with:
-          name: build-sack-os
+          name: build-sackos
           path: ./_site/mack
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
