@@ -97,22 +97,22 @@ jobs:
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Download Pages
-        uses: download-artifact
+        uses: actions/download-artifact@v3
         with:
           name: build-pager
           path: ./_site/
       - name: Download Ubunut
-        uses: download-artifact
+        uses: actions/download-artifact@v3
         with:
           name: build-ubunut
           path: ./_site/ubunut
       - name: Download Michaelsoft Binbows
-        uses: download-artifact
+        uses: actions/download-artifact@v3
         with:
           name: build-binbows
           path: ./_site/window
       - name: Download Sacking the OS
-        uses: download-artifact
+        uses: actions/download-artifact@v3
         with:
           name: build-sack-os
           path: ./_site/mack
