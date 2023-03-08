@@ -1,0 +1,120 @@
+name: Build
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+  build-ubunut:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+      - name: Install dependencies
+        run: pnpm i
+      - name: Upgrade dependencies
+        run: pnpm upgrade-deps:l
+      - name: Build project
+        run: pnpm build
+      - name: Deploy
+        uses: actions/upload-artifact@v3
+        with:
+          path: electron/out
+          name: build-ubunut
+  build-wombat:
+    runs-on: windows-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+      - name: Install dependencies
+        run: pnpm i
+      - name: Upgrade dependencies
+        run: pnpm upgrade-deps:l
+      - name: Build project
+        run: pnpm build
+      - name: Deploy
+        uses: actions/upload-artifact@v3
+        with:
+          path: electron/out
+          name: build-binbows
+  build-marcos:
+    runs-on: macos-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Install pnpm
+        uses: pnpm/action-setup@v2
+        with:
+          version: 7.28.0
+      - name: Install dependencies
+        run: pnpm i
+      - name: Upgrade dependencies
+        run: pnpm upgrade-deps:l
+      - name: Build project
+        run: pnpm build
+      - name: Deploy
+        uses: actions/upload-artifact@v3
+        with:
+          path: electron/out
+          name: build-sackos
+  build-page:
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@ee2113536afb7f793eed4ce60e8d3b26db912da4 # v1.127.0
+        with:
+          ruby-version: '3.0' # Not needed with a .ruby-version file
+          bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+          cache-version: 0 # Increment this number if you need to re-download cached gems
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+      - name: Build with Jekyll
+        # Outputs to the './_site' directory by default
+        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        env:
+          JEKYLL_ENV: production
+      - name: Deploy
+        uses: actions/upload-artifact@v3
+        with:
+          path: ./_site
+          name: pager
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [build-page,]
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - name: Download Pages
+        uses: download-artifact
+        with:
+          name: build-pager
+          path: ./_site/
+      - name: Download Ubunut
+        uses: download-artifact
+        with:
+          name: build-ubunut
+          path: ./_site/ubunut
+      - name: Download Michaelsoft Binbows
+        uses: download-artifact
+        with:
+          name: build-binbows
+          path: ./_site/window
+      - name: Download Sacking the OS
+        uses: download-artifact
+        with:
+          name: build-sack-os
+          path: ./_site/mack
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v1
