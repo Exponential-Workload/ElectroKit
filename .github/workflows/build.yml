@@ -93,7 +93,7 @@ jobs:
           name: pager
   deploy:
     runs-on: ubuntu-latest
-    needs: [build-page,]
+    needs: [build-page,build-ubunut,build-marcos]
     if: github.ref == 'refs/heads/master'
     steps:
       - name: Download Pages
