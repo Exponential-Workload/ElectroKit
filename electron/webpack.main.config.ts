@@ -19,8 +19,8 @@ export const mainConfig: Configuration = {
   plugins: [
     new CopyPlugin({
       patterns: [
-        { from: path.resolve(__dirname, "src/renderer-app/**/*"), to: path.resolve(__dirname, '.webpack/renderer/main_window'), context: 'src/renderer-app/' },
-        { from: path.resolve(__dirname, "src/app/**/*"), to: path.resolve(__dirname, '.webpack/main/static'), context: 'src/app/' },
+        { from: path.resolve(__dirname, "src/renderer-app/"), to: path.resolve(__dirname, '.webpack/renderer/main_window'), context: 'src/renderer-app/' },
+        { from: path.resolve(__dirname, "src/app/"), to: path.resolve(__dirname, '.webpack/main/static'), context: 'src/app/' },
       ],
     }),
   ]
