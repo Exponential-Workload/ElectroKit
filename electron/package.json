@@ -1,8 +1,8 @@
 {
   "name": "electron-sveltekit-clusterfuck",
-  "productName": "Electron + SvelteKit Clusterfuck",
+  "productName": "A.Clusterfuck",
   "version": "1.0.0",
-  "description": "A Clusterfuck of web stuff",
+  "description": "A Clusterfuck of mixing Electron & SvelteKit",
   "main": ".webpack/main",
   "scripts": {
     "start": "NODE_ENV=development electron-forge start",

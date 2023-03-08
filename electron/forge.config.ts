@@ -9,9 +9,11 @@ import { WebpackPlugin } from '@electron-forge/plugin-webpack';
 import { mainConfig } from './webpack.main.config';
 import { rendererConfig } from './webpack.renderer.config';
 
+const binaryName = 'Clusterfuck'
+
 const config: ForgeConfig = {
   packagerConfig: {
-    executableName: 'AnonApp'
+    executableName: binaryName
   },
   rebuildConfig: {},
   makers: [
@@ -19,7 +21,7 @@ const config: ForgeConfig = {
     new MakerZIP({}, ['darwin', 'linux']),
     new MakerDeb({
       options: {
-        bin: 'AnonApp'
+        bin: binaryName
       }
     }),
     new MakerDMG({ format: 'ULFO' }),
