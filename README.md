@@ -1,5 +1,5 @@
 # ElectroKit
-A functional merge between [Electron](https://electronjs.org) [Forge](https://www.electronforge.io/) & [Svelte](https://svelte.dev)[Kit](https://kit.svelte.dev) & [TypeScript](https://typescriptlang.org) - Can easily be used as a base between Electron & almost any other framework.
+A working (barely) merge between [Electron](https://electronjs.org) [Forge](https://www.electronforge.io/), [Svelte](https://svelte.dev)[Kit](https://kit.svelte.dev) & [TypeScript](https://typescriptlang.org) - Can easily be used as a base between Electron & almost any other framework.
 
 This is so hacked together yet it somehow works. Don't ask how, or why. I don't know.
 
