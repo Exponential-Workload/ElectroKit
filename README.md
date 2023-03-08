@@ -60,9 +60,9 @@ $ pnpm build
 
 ## Useful Resources
 
-Here's a bunch: [Electron Documentation](https://www.electronjs.org/docs/latest/) | [Electron Forge Documentation](https://www.electronforge.io/) | [Learn Svelte](https://svelte.dev/tutorial/basics) (Svelte Beginners) | [Svelte API Refrence](https://svelte.dev/docs) (Svelte Advanced) | [SvelteKit Documentation](https://kit.svelte.dev/docs/introduction)
+Here's a few: [Electron Documentation](https://www.electronjs.org/docs/latest/) | [Electron Forge Documentation](https://www.electronforge.io/) | [Learn Svelte](https://svelte.dev/tutorial/basics) (Svelte Beginners) | [Svelte API Refrence](https://svelte.dev/docs) (Svelte Advanced) | [SvelteKit Documentation](https://kit.svelte.dev/docs/introduction) | [BreadDev Discord](https://cord.breadhub.cc) (You can ask for help here)<br/>
+Additional Resources for complete noobs: [JavaScript.Info](https://javascript.info/) ([JP](https://ja.javascript.info/)) | [JavaScript.Info Discord](https://discord.gg/AuEWpFkfD4) | [MDN](https://developer.mozilla.org/) | [MDN HTML Basics](https://developer.mozilla.org/en-US/docs/Learn/HTML) | [MDN JavaScript Basics](https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics) | [MDN CSS Basics](https://developer.mozilla.org/en-US/docs/Learn/CSS) | [MDN Command Line Crash Course](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Understanding_client-side_tools/Command_line) | [MDN Getting started with Svelte](https://developer.mozilla.org/en-US/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Svelte_getting_started) | [W3Schools JavaScript Tutorial](https://www.w3schools.com/js/DEFAULT.asp) | [W3Schools Git Tutorial](https://www.w3schools.com/git/default.asp) | [Github Git Tutorial](https://docs.github.com/en/get-started/using-git)
 
 ###### Footnotes
 
-This can VERY easily be migrated to any framework, assuming `pnpm build` in the `svelte` directory results in a `build` output directory with static files, and `pnpm dev` there binds a devserver to port 5173.<br/>
-That's all you need for this to work on any framework.
+This can VERY easily be migrated to any framework, assuming `pnpm build` in the `svelte` directory results in a `build` output directory with static files, and `pnpm dev` there binds a devserver to port 5173.
